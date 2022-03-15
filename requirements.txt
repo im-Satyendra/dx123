@@ -1,5 +1,4 @@
 requests
 pyrogram
 tgcrypto
-pyromod
 numpy
