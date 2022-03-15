@@ -94,7 +94,7 @@ async def rn(c,m):
         progress_args=("downloading..", cm, c_time))
         await c.send_document(
         chat_id=m.chat.id,
-        video=dl,
+        document=dl,
         force_document=True,
         thumb="IMG_20220315_214016_961.jpg",
         reply_to_message_id=m.reply_to_message.message_id,
