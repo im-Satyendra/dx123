@@ -102,4 +102,3 @@ async def rn(c,m):
         await m.reply_text("error: reply to media or gibe file name with ext")
   except Exception as e:
       await c.send_message(m.chat.id,e)
-Bot.run()
