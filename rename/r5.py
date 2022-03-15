@@ -91,13 +91,14 @@ async def rn(c,m):
         file_name=fn,
         block=True,
         progress=progress_for_pyrogram,
-        progress_args=("downloading..", cm, c_time))
+        progress_args=("Downloading..", cm, c_time))
         await c.send_video(
         chat_id=m.chat.id,
         video=dl,
         reply_to_message_id=m.reply_to_message.message_id,
         progress=progress_for_pyrogram,
-        progress_args=("uploading..", cm, c_time))
+        progress_args=("Uploading..", cm, c_time))
+        os.remove(dl)
     else:
         await m.reply_text("error: reply to media or gibe file name with ext")
   except Exception as e:
