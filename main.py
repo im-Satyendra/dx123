@@ -83,7 +83,7 @@ Bot = Client(
     bot_token="5144458498:AAF-BCS2X3BcvpEkU9Rp_wPMgCRhXLuxB0k",
     api_id=3938951,
     api_hash="6561686ba611b2d46efedef7debd6fa5",
-    plugins="rename"
+    plugins=dict( root="rename" )
 )
 
 @Bot.on_message(filters.command(["start"]))
