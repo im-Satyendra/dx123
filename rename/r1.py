@@ -92,11 +92,11 @@ async def rn(c,m):
         block=True,
         progress=progress_for_pyrogram,
         progress_args=("downloading..", cm, c_time))
-        await c.send_video(
+        await c.send_document(
         chat_id=m.chat.id,
         video=dl,
         force_document=True,
-        thumb="IMG_20220315_214016_961.jpg"
+        thumb="IMG_20220315_214016_961.jpg",
         reply_to_message_id=m.reply_to_message.message_id,
         progress=progress_for_pyrogram,
         progress_args=("uploading..", cm, c_time))
