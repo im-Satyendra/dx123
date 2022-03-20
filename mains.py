@@ -215,4 +215,5 @@ async def rn(c,m):
   except Exception as e:
       await c.send_message(m.chat.id,e)
 Bot = [Bot1,Bot2,Bot4,Bot5]
-Bot.run()
+for i in Bot:
+    i.run()
