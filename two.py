@@ -217,4 +217,4 @@ async def rn(c,m):
 Bot = [Bot1,Bot2,Bot4,Bot5]
 for i in Bot:
     i.start()
-    idle()
+idle()
