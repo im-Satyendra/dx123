@@ -78,20 +78,36 @@ def TimeFormatter(milliseconds: int) -> str:
         ((str(milliseconds) + "ms, ") if milliseconds else "")
     return tmp[:-2]
 
-Bot = Client(
-    "Simpleachu",
-    bot_token="5144458498:AAF-BCS2X3BcvpEkU9Rp_wPMgCRhXLuxB0k",
-    api_id=3938951,
-    api_hash="6561686ba611b2d46efedef7debd6fa5",
-    plugins=dict( root="rename" )
+Bot1 = Client(
+    "Simpleachu1",
+    bot_token="1814624231:AAFr1cp1MGKCaC2spPrbJFN6FoNt1MMso5w",
+    api_id=2171111,
+    api_hash="fd7acd07303760c52dcc0ed8b2f73086"
 )
-
-@Bot.on_message(filters.command(["start"]))
+Bot2 = Client(
+    "Simpleachu2",
+    bot_token="5154860805:AAEZs1rWayks2zJF4y1LeYoQb_r7ApDSMBU",
+    api_id=2171111,
+    api_hash="fd7acd07303760c52dcc0ed8b2f73086"
+)
+Bot4 = Client(
+    "Simpleachu4",
+    bot_token="5217702275:AAH0KwikoXAzjEc7qO8V9XiH1-gnTAVnFF4",
+    api_id=2171111,
+    api_hash="fd7acd07303760c52dcc0ed8b2f73086"
+)
+Bot5 = Client(
+    "Simpleachu5",
+    bot_token="5263754363:AAFdmNpmqjZj3d0psXivJR11ni54mXmUWPU",
+    api_id=2171111,
+    api_hash="fd7acd07303760c52dcc0ed8b2f73086"
+)
+@Client.on_message(filters.command(["start"]))
 async def start(bot, update):
     await update.reply_text(
         text=f"Hi {update.from_user.mention}"
     )
-@Bot.on_message(filters.command(["r","rename"]))
+@Client.on_message(filters.command(["d","r","rename"]))
 async def rn(c,m):
   try:
     if (" " in m.text) and (m.reply_to_message is not None):
@@ -104,9 +120,9 @@ async def rn(c,m):
         block=True,
         progress=progress_for_pyrogram,
         progress_args=("downloading..", cm, c_time))
-        await c.send_video(
+        await c.send_document(
         chat_id=m.chat.id,
-        video=dl,
+        document=dl,
         reply_to_message_id=m.reply_to_message.message_id,
         progress=progress_for_pyrogram,
         progress_args=("uploading..", cm, c_time))
@@ -114,4 +130,11 @@ async def rn(c,m):
         await m.reply_text("error: reply to media or gibe file name with ext")
   except Exception as e:
       await c.send_message(m.chat.id,e)
-Bot.run()
+Bot1.run()
+print("1")
+Bot2.run()
+print("2")
+Bot3.run()
+print("3")
+Bot4.run()
+print("4")
