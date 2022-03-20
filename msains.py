@@ -2,7 +2,7 @@ from http import client
 from numpy import block
 from pyrogram import Client, filters
 import time
-
+from pyrogram import idle
 import os
 import time
 import math
@@ -216,4 +216,5 @@ async def rn(c,m):
       await c.send_message(m.chat.id,e)
 Bot = [Bot1,Bot2,Bot4,Bot5]
 for i in Bot:
-    i.run()
+    i.start()
+    idle()
