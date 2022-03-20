@@ -102,12 +102,96 @@ Bot5 = Client(
     api_id=2171111,
     api_hash="fd7acd07303760c52dcc0ed8b2f73086"
 )
-@Client.on_message(filters.command(["start"]))
+@Bot1.on_message(filters.command(["start"]))
 async def start(bot, update):
     await update.reply_text(
         text=f"Hi {update.from_user.mention}"
     )
-@Client.on_message(filters.command(["d","r","rename"]))
+@Bot1.on_message(filters.command(["d","r","rename"]))
+async def rn(c,m):
+  try:
+    if (" " in m.text) and (m.reply_to_message is not None):
+        fn = file_name = m.text.split(" ", 1)[1]
+        c_time = time.time()
+        cm = await c.send_message(m.chat.id,"Downloading...")
+        dl = await c.download_media(
+        message=m.reply_to_message,
+        file_name=fn,
+        block=True,
+        progress=progress_for_pyrogram,
+        progress_args=("downloading..", cm, c_time))
+        await c.send_document(
+        chat_id=m.chat.id,
+        document=dl,
+        reply_to_message_id=m.reply_to_message.message_id,
+        progress=progress_for_pyrogram,
+        progress_args=("uploading..", cm, c_time))
+    else:
+        await m.reply_text("error: reply to media or gibe file name with ext")
+  except Exception as e:
+      await c.send_message(m.chat.id,e)
+@Bot2.on_message(filters.command(["start"]))
+async def start(bot, update):
+    await update.reply_text(
+        text=f"Hi {update.from_user.mention}"
+    )
+@Bot2.on_message(filters.command(["d","r","rename"]))
+async def rn(c,m):
+  try:
+    if (" " in m.text) and (m.reply_to_message is not None):
+        fn = file_name = m.text.split(" ", 1)[1]
+        c_time = time.time()
+        cm = await c.send_message(m.chat.id,"Downloading...")
+        dl = await c.download_media(
+        message=m.reply_to_message,
+        file_name=fn,
+        block=True,
+        progress=progress_for_pyrogram,
+        progress_args=("downloading..", cm, c_time))
+        await c.send_document(
+        chat_id=m.chat.id,
+        document=dl,
+        reply_to_message_id=m.reply_to_message.message_id,
+        progress=progress_for_pyrogram,
+        progress_args=("uploading..", cm, c_time))
+    else:
+        await m.reply_text("error: reply to media or gibe file name with ext")
+  except Exception as e:
+      await c.send_message(m.chat.id,e)
+@Bot4.on_message(filters.command(["start"]))
+async def start(bot, update):
+    await update.reply_text(
+        text=f"Hi {update.from_user.mention}"
+    )
+@Bot4.on_message(filters.command(["d","r","rename"]))
+async def rn(c,m):
+  try:
+    if (" " in m.text) and (m.reply_to_message is not None):
+        fn = file_name = m.text.split(" ", 1)[1]
+        c_time = time.time()
+        cm = await c.send_message(m.chat.id,"Downloading...")
+        dl = await c.download_media(
+        message=m.reply_to_message,
+        file_name=fn,
+        block=True,
+        progress=progress_for_pyrogram,
+        progress_args=("downloading..", cm, c_time))
+        await c.send_document(
+        chat_id=m.chat.id,
+        document=dl,
+        reply_to_message_id=m.reply_to_message.message_id,
+        progress=progress_for_pyrogram,
+        progress_args=("uploading..", cm, c_time))
+    else:
+        await m.reply_text("error: reply to media or gibe file name with ext")
+  except Exception as e:
+      await c.send_message(m.chat.id,e)
+@Bot5.on_message(filters.command(["start"]))
+async def start(bot, update):
+    await update.reply_text(
+        text=f"Hi {update.from_user.mention}"
+    )
+@Bot5.on_message(filters.command(["d","r","rename"]))
 async def rn(c,m):
   try:
     if (" " in m.text) and (m.reply_to_message is not None):
