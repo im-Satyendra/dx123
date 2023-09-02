@@ -80,25 +80,25 @@ def TimeFormatter(milliseconds: int) -> str:
 
 Bot1 = Client(
     "Simpleachu1",
-    bot_token="1814624231:AAFr1cp1MGKCaC2spPrbJFN6FoNt1MMso5w",
+    bot_token="1814624231:",
     api_id=2171111,
     api_hash="fd7acd07303760c52dcc0ed8b2f73086"
 )
 Bot2 = Client(
     "Simpleachu2",
-    bot_token="5154860805:AAEZs1rWayks2zJF4y1LeYoQb_r7ApDSMBU",
+    bot_token="5154860805:",
     api_id=2171111,
     api_hash="fd7acd07303760c52dcc0ed8b2f73086"
 )
 Bot4 = Client(
     "Simpleachu4",
-    bot_token="5217702275:AAH0KwikoXAzjEc7qO8V9XiH1-gnTAVnFF4",
+    bot_token="5217702275:-gnTAVnFF4",
     api_id=2171111,
     api_hash="fd7acd07303760c52dcc0ed8b2f73086"
 )
 Bot5 = Client(
     "Simpleachu5",
-    bot_token="5263754363:AAFdmNpmqjZj3d0psXivJR11ni54mXmUWPU",
+    bot_token="5263754363:",
     api_id=2171111,
     api_hash="fd7acd07303760c52dcc0ed8b2f73086"
 )
